@@ -1,0 +1,59 @@
+/*[Question. 1] While traversing a single-circular linked list  which condition establishes that the traversing 
+    element/variable has reached the first element? */
+//[Ans.1]
+// Lets take an exaple and create a basic circular linked list  
+# include <iostream>
+using namespace std;
+// Creating Node class
+class Node{
+  //Creating class objects
+  public:
+  int data;
+  Node*next;
+  //Calling Node constructor    
+  Node(int data){
+    this->data=data;
+    next=NULL;
+  }
+};
+//Function to insert naode at the end of the linked list
+void append(Node*&head,int data){
+    Node*temp=head;
+    Node*new node=new Node(data);
+    if(temp==NULL){head=new_node;new_node->next=head;return;}
+    while(temp->next!=head){temp=temp->next;}//This condition establishes that the traversing element(temp) has reached the first element
+    temp->next=new_node;
+    new_node->next=head;
+}
+//Funtion to print elements of the linked list from head to the last node.
+void pfun(Nod&head){
+    Node*temp=head;
+    do{cout<<temp->data<<"->";temp=temp->next;}
+    while(temp!=head);
+}
+
+int main(){
+    Node*head=NULL;
+    append(head,1);
+    append(head,2);
+    append(head,3);
+    pfun(head);
+}
+/*
+With reference to above example off the circular linke  list.
+List 24 i.e. while(temp->next!=head){temp=temp->next;} establishes that the traversing element/variable has reached at the first element.
+We know that in circular linked list last node of the linked list points to the head of the linked list, hence we can check if any node
+ points to head of linked list then that node is the end of the circular linked list.
+*/
+
+
+/*[Question. 2] What are the practical application of circular linked list?(Try to find applications in your respective fields)
+
+Practical applications of circular linked list are:
+1) Multiplayer Games: All the players are kept in circular Linked list and the pointer keeps on moving forward as a player's chance ends.
+2) Computing resources: Circular linked list is used to manage the computing resources of the computer.
+3) Fibonacci Heap: Circular linked list is also used in the implementation of advanced data structures such as Fibonacci Heap'
+4) Computer Networking: Circular list also used in the computer networking for token scheduling.
+5) Implementation of Data Structure: Data structures such as stacks and queues are implemented with the help of the circular linked lists.
+6) Audio/Video Streaming: Circular linked list is also used in audio and video streaming, for example, when one person complete audio list 
+ finishes playing in music player then it again starts playing from the start.
